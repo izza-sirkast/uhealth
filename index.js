@@ -31,4 +31,5 @@ app.use(express.urlencoded({limit : '50mb', extended : true}))
 app.use('/', dashboardRoute)
 app.use('/mahasiswa', mahasiswaRoute)
 
+console.log('Server running on http://localhost:3000')
 app.listen(3000)
