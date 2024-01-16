@@ -18,10 +18,10 @@ app.set('views', path.join(__dirname, '/views'))
 app.set('layout', 'layouts/main-layout.ejs')
 
 // Database setup
-mongoose.connect("mongodb+srv://team3:5tmCbusc79gV3xpW@uhealth.uujgnqs.mongodb.net/uhealth?retryWrites=true&w=majority")
-const db = mongoose.connection;
-db.on('error', err => console.log(err))
-db.once('open', () => console.log('Connected to MongoDB atlas'))
+// mongoose.connect("mongodb+srv://team3:5tmCbusc79gV3xpW@uhealth.uujgnqs.mongodb.net/uhealth?retryWrites=true&w=majority")
+// const db = mongoose.connection;
+// db.on('error', err => console.log(err))
+// db.once('open', () => console.log('Connected to MongoDB atlas'))
 
 app.use(ejsLayout)
 app.use(express.static(path.join(__dirname, '/public')))
