@@ -4,7 +4,8 @@
   "description": "Aplikasi kesehata Universitas UNIKOM yang terintegrasi dengan klinik UNIKOM\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "author": "team-3",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
     "mongodb": "^6.3.0",
-    "mongoose": "^8.0.4"
+    "mongoose": "^8.0.4",
+    "nodemon": "^3.0.2"
   }
 }
