@@ -1,14 +1,32 @@
-nav{
+.radius{
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.main-image{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
-ul{
+.main-section {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* width: 90%; */
 }
 
-li{
-    list-style: none;
-    margin-right: 15px;
+.profile-card {
+    width: 23%;
+    height: 70vh;
+    background-color: white;
+    position: relative;
+    top: -250px;
+}
+
+.main-card {
+    width: 63%;
+    height: 70vh;
+    background-color: white;
+    position: relative;
+    top: -250px;
 }
