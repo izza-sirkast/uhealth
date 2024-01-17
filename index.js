@@ -10,6 +10,7 @@ const path = require('path')
 const dashboardRoute = require('./routes/index')
 const mahasiswaRoute = require('./routes/mahasiswa')
 const authenticationRoute = require('./routes/authentication')
+const dashboardMhsRoute = require('./routes/dashboard-mahasiswa')
 
 const app = express()
 
@@ -32,7 +33,9 @@ app.use(express.urlencoded({limit : '50mb', extended : true}))
 
 app.use('/auth', authenticationRoute)
 app.use('/mahasiswa', mahasiswaRoute)
-app.use('/', dashboardRoute)
+app.use('/dashboard', dashboardRoute)
+app.use('/', dashboardMhsRoute)
+
 
 app.listen(3000, () => {
     console.log('Server running on http://localhost:3000')

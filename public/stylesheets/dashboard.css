@@ -76,7 +76,8 @@ ul {
 }
 .nav-link:hover {
     color: #000;
-    transition: all 0.5s ease-in-out;
+    /* font-weight: bold; */
+    transition: all 0.3s ease-in-out;
 }
 
 .underline {
@@ -90,9 +91,9 @@ ul {
   position: absolute;
   right: 0;
   width: 0;
-  bottom: -6px;
+  bottom: -5px;
   background: #000;
-  height: 3px;
+  height: 2px;
   transition-property: width;
   transition-duration: 0.5s;
   transition-timing-function: ease-out;
@@ -104,6 +105,16 @@ ul {
   left: 0;
   right: auto;
   width: 100%;
+}
+
+.underline.active:after {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+.nav-link.active {
+    /* font-weight: bold; */
+    color: #000;
 }
 
 .profile-user {
@@ -141,4 +152,43 @@ ul {
     justify-content:center;
     align-items: center;
     margin-top: 60px;
+}
+
+/* Main */
+.dashboard-section {
+    margin: 30px 40px 0 40px;
+}
+.card-container {
+    display: flex;
+    justify-content: space-between;
+}
+.card {
+    border: solid 1px #000;
+    border-radius: 20px;
+    width: 200px;
+    height: 120px;
+}
+.weather-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.weather-today {
+    width: 240px;
+    height: 250px;
+    border: solid 1px #000;
+    border-radius: 20px;
+}
+.weather-card-container {
+    display: flex;
+}
+.weather-card {
+    width: 105px;
+    height: 150px;
+    border: solid 1px #000;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+.weather-card:nth-child(5) {
+    margin-right: 0;
 }
