@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uhealth</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/w3.css">
+</head>
+<body>
+    <%- include('../partials/header.ejs')  %>
+
+    <div class="main-image">
+        <img class="radius" src="assets/mountain.jpg" alt="mountain" style="width:96%;">
+    </div>
+    <div class="main-section">
+        <div class="profile-card w3-round-xxlarge">
+            <div class="profile-user">
+                <img src="assets/profile.png" alt="profile picture" style="width: 110px; margin: 20px 0 0 20px;">
+                <ul>
+                    <li>Usman bin Abdul Jalil Sisha</li>
+                    <li>Dosen</li>
+                </ul>
+            </div>
+            <div class="profile-info">
+                <ul>
+                    <li>Nomor Induk Dosen</li>
+                    <li>201321908401</li>
+                    <li>Tahun Masuk</li>
+                    <li>2009</li>
+                    <li>Kelas Diampu</li>
+                    <li>S1/III/IF-1, S1/IV/IF-7</li>
+                    <li>Email</li>
+                    <li>usmaniabdul771@dosen.unikom.ac.id</li>
+                </ul>
+            </div>
+            <div class="button-logout">
+                <button class="w3-button w3-red w3-round-xlarge">Logout</button>
+            </div>
+        </div>
+        <div class="main-card w3-round-xxlarge">
+            <nav>
+                <ul>
+                    <li><a class="nav-link underline" href="/dosen">Dashboard</a></li>
+                    <li><a class="nav-link underline" href="/dosen/feeling-sick">Feeling Sick</a></li>
+                    <li><a class="nav-link underline" href="/dosen/surat-izin">Cek Surat Izin</a></li>
+                    <li><a class="nav-link underline" href="/dosen/kesehatan-mahasiswa">Monitor Kesehatan Mahasiswa</a></li>
+                </ul>
+            </nav>
+            <%- body %>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+        const paths = ['/', '/feeling-sick', '/izin-sakit', '/riwayat'];
+        const currentPath = window.location.pathname;
+
+        paths.forEach(function(path) {
+            if (currentPath === path) {
+                var link = document.querySelector(`a[href="${path}"]`);
+                link.classList.add('active');
+            }
+        });
+    }
+    </script>
+    
+</body>
+</html>

@@ -1,14 +1,20 @@
-const express = require('express')
-const router = express.Router()
-const mahasiswaModel = require('../models/mahasiswa')
+const express = require('express');
+const router = express.Router();
 
-router.get('/', async (req, res) => {
-    try{
-        const mahasiswa = await mahasiswaModel.find()
-        res.render('mahasiswa', {mahasiswa})
-    }catch(err){
-        res.redirect('/')
-    }
+router.get('/', (req, res) => {
+    res.render('mahasiswa/dashboard')
 })
 
-module.exports = router
+router.get('/feeling-sick', (req, res) => {
+    res.render('mahasiswa/feeling-sick')
+})
+
+router.get('/izin-sakit', (req, res) => {
+    res.render('mahasiswa/izin-sakit')
+})
+
+router.get('/riwayat', (req, res) => {
+    res.render('mahasiswa/riwayat')
+})
+
+module.exports = router;
