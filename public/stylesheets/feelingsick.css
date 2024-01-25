@@ -1,0 +1,33 @@
+h2,
+h6 {
+  margin-left: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-right,
+.column-left {
+  flex: 1;
+}
+
+.column-left {
+  margin-right: 90px;
+}
+
+.gejala,
+.dampak {
+  margin-left: 40px;
+}
+
+h3 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-left: 60px;
+  height: 5px;
+}
