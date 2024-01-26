@@ -49,13 +49,14 @@
                 <button class="w3-button w3-red w3-round-xlarge">Logout</button>
             </div>
         </div>
+        <!-- Dokter ini navigation link nya masih cuma placeholder doang -->
         <div class="main-card w3-round-xxlarge">
             <nav>
                 <ul>
                     <li><a class="nav-link underline" href="/dokter">Dashboard</a></li>
-                    <li><a class="nav-link underline" href="/dokter/riwayat-pemeriksaan">Feeling Sick</a></li>
-                    <li><a class="nav-link underline" href="/dokter/buat-surat-izin">Cek Surat Izin</a></li>
-                    <li><a class="nav-link underline" href="/dokter/jadwal-pemeriksaan">Monitor Kesehatan Mahasiswa</a></li>
+                    <li><a class="nav-link underline" href="/dokter/riwayat-pemeriksaan">Riwayat Pemeriksaan</a></li>
+                    <li><a class="nav-link underline" href="/dokter/buat-surat-izin">Buat Surat Izin</a></li>
+                    <li><a class="nav-link underline" href="/dokter/jadwal-pemeriksaan">Jadwal Pemeriksaan</a></li>
                 </ul>
             </nav>
             <%- body %>
@@ -64,7 +65,7 @@
 
     <script>
         window.onload = function() {
-        const paths = ['/', '/feeling-sick', '/izin-sakit', '/riwayat'];
+        const paths = ['/dokter', '/dokter/riwayat-pemeriksaan', '/dokter/buat-surat-izin', '/dokter/jadwal-pemeriksaan'];
         const currentPath = window.location.pathname;
 
         paths.forEach(function(path) {
