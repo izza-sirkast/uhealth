@@ -1,3 +1,69 @@
-<div class="izin-sakit">
-    <h1>izin sakit</h1>
-</div>
+<section id="izinsakit">
+  <div class="header">
+    <h2>SURAT KETERANGAN SAKIT</h2>
+  </div>
+
+  <div class="row data-mhs">
+    <div class="tittle">
+      <h3>Data Mahasiswa</h3>
+    </div>
+    <div class="col-4">
+      <label>NIM</label>
+      <input type="text" name="nim" size="15px" />
+    </div>
+    <div class="col-4">
+      <label>NAMA</label>
+      <input type="text" name="nama" size="15px" />
+    </div>
+    <div class="col-4">
+      <label>KELAS</label>
+      <input type="text" name="kelas" size="15px" />
+    </div>
+  </div>
+
+  <div class="row info-akademis">
+    <div class="tittle">
+      <h3>Informasi Akademis & Diagnosis</h3>
+    </div>
+    <div class="col-3">
+      <label>TANGGAL</label>
+      <input type="date" name="tanggal" />
+    </div>
+    <div class="col-3">
+      <label>MATAKULIAH TUJUAN</label>
+      <select name="matkul">
+        <option value="Jarkom">Jaringan Komputer</option>
+        <option value="Imk">Interaksi Manusia dan Komputer</option>
+        <option value="Analgo">Analisis dan Strategi Algoritma</option>
+        <option value="ADBD">Analisis dan Desain Basis Data</option>
+        <option value="SO">Sistem Operasi</option>
+        <option value="Psd">Pengantar Sains Data</option>
+        <option value="Pdsd">Pemrograman Dasar Sains Data</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <label>DOSEN PENGAMPU</label>
+      <select name="dosen">
+        <option value="Eko">Eko Budi Setiawan S.Kom., M.T</option>
+        <option value="Utami">Utami Dewi Widianti M.Kom</option>
+        <option value="Chrismikha">Chrismikha Hardyanto S.Kom., M.Kom.</option>
+        <option value="Gentisya">Gentisya Tri Mardiani S.Kom., M.Kom</option>
+        <option value="Hanhan">Hanhan Maulana M.Kom., Ph.D</option>
+        <option value="Riani">Riani Lubis S.T, M.T</option>
+        <option value="Fakhrian">Fakhrian Fadlia Adiwijaya M.Kom</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <label>JENIS PENYAKIT</label>
+      <input type="text" size="15px" />
+    </div>
+    <div class="col-3">
+      <label>SURAT SAKIT</label>
+      <input type="file" size="15px" />
+    </div>
+  </div>
+  <div class="button-container">
+    <button>Clear</button>
+    <button>Kirim</button>
+  </div>
+</section>
