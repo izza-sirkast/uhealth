@@ -173,7 +173,7 @@ ul {
 }
 .weather-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 30px;
 }
 .weather-today {
@@ -186,7 +186,7 @@ ul {
   display: flex;
 }
 .weather-card {
-  width: 105px;
+  width: 110px;
   height: 150px;
   border: solid 1px #000;
   border-radius: 20px;

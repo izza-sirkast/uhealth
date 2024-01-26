@@ -1,8 +1,73 @@
-.riwayat-pemeriksaan {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
+#riwayat {
+  margin: 40px;
+}
+
+#riwayat .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 137px;
+}
+
+#riwayat .row .col-4 {
+  width: 32%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+#riwayat .row .col-4 .card {
+  width: 90%;
+  height: 100%;
+}
+
+/* #riwayat .row .col-4 .card .card-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+} */
+
+#riwayat .row .col-4 .card .card-header span p {
+  font-size: 13px;
+  margin-left: 20px;
+  display: inline-block;
+  line-height: 7px;
+}
+
+#riwayat .row .col-4 .card .card-header::after {
+  content: "";
+  width: 100%;
+  border: 1px solid black;
+  transform: rotate(0deg);
+  display: block;
+}
+
+#riwayat .row .col-4 .card .card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+#riwayat .row .col-4 .card .card-body .content-left ul {
+  padding: 0;
+  margin: 0 0 0 3rem;
+  line-height: 10px;
+}
+
+#riwayat .row .col-4 .card .card-body .content-right {
+  width: 30%;
+  text-align: center;
+}
+
+#riwayat .row .col-4 .card .card-footer::before {
+  content: "";
+  width: 100%;
+  border: 1px solid black;
+  transform: rotate(0deg);
+  display: block;
+}
+
+#riwayat .row .col-4 .card .card-footer span {
+  font-size: 13px;
+  margin-left: 20px;
+  display: inline-block;
+  line-height: 7px;
 }
