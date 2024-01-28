@@ -74,6 +74,9 @@
                 if (currentPath === path) {
                     const link = document.querySelector(`a[href="${path}"]`);
                     link.classList.add('active');
+                } else if (currentPath === '/mahasiswa/hasil') {
+                    const link = document.querySelector(`a[href="/mahasiswa/feeling-sick"]`);
+                    link.classList.add('active');
                 }
             });
         }
