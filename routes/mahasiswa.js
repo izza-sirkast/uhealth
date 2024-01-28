@@ -17,4 +17,8 @@ router.get('/riwayat', (req, res) => {
     res.render('mahasiswa/riwayat')
 })
 
+router.get('/hasil', (req, res) => {
+    res.render('mahasiswa/hasil-fs')
+})
+
 module.exports = router;
