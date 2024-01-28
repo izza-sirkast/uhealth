@@ -6,6 +6,7 @@
     <title>uhealth</title>
     <base href="/">
     <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mahasiswa/feeling_sick.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/w3.css">
 </head>
 <body>
@@ -64,7 +65,7 @@
 
     <script>
         window.onload = function () {
-            const paths = ['/mahasiswa', '/mahasiswa/feeling-sick', '/mahasiswa/izin-sakit', '/mahasiswa/riwayat'];
+            const paths = ['/dosen', '/dosen/feeling-sick', '/dosen/surat-izin', '/dosen/kesehatan-mahasiswa'];
             const currentPath = window.location.pathname;
 
             paths.forEach(function (path) {
