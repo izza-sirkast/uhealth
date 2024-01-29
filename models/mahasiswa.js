@@ -12,6 +12,27 @@ const mahasiswaSchema = mongoose.Schema({
     email: {
         type: String,
         required: true
+    },
+    kelas: {
+        type: String,
+        required: true
+    },
+    semester: {
+        type: Number,
+        required: true
+    },
+    program_studi: {
+        type: String,
+        required: true
+    },
+    tahun_masuk: {
+        type: Date,
+        required: true
+    },
+    dosen_wali: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Dosen'
     }
 }, {collection : 'mahasiswa'})
 

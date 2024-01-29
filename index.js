@@ -21,13 +21,13 @@ app.set('views', path.join(__dirname, '/views'))
 // Database setup
 // ====================================================================
 // Connect to atlas
-// mongoose.connect("mongodb+srv://izza:2ReVT0ZGpn5cdcZk@uhealth.uujgnqs.mongodb.net/uhealth?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://izza:2ReVT0ZGpn5cdcZk@uhealth.uujgnqs.mongodb.net/uhealth?retryWrites=true&w=majority")
 
 // Connect to mongodb local
 // mongoose.connect("mongodb://localhost:27017/uhealth")
-// const db = mongoose.connection;
-// db.on('error', err => console.log(err))
-// db.once('open', () => console.log('Connected to mongodb'))
+const db = mongoose.connection;
+db.on('error', err => console.log(err))
+db.once('open', () => console.log('Connected to mongodb'))
 
 // Middleware
 app.use(ejsLayout)
