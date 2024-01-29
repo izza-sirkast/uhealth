@@ -20,11 +20,7 @@
           <label for="gejala">Mual</label>
         </li>
         <li>
-          <input
-            type="checkbox"
-            class="gejala"
-            name="gejala"
-            value="Nyeri_dada" />
+          <input type="checkbox" class="gejala" name="gejala" value="Nyeri_dada" />
           <label for="gejala">Nyeri dada seperti terbakar</label>
         </li>
         <li>
@@ -46,11 +42,7 @@
           <label for="gejala">Mimisan</label>
         </li>
         <li>
-          <input
-            type="checkbox"
-            class="gejala"
-            name="gejala"
-            value="Bersendawa" />
+          <input type="checkbox" class="gejala" name="gejala" value="Bersendawa" />
           <label for="gejala">Bersendawa</label>
         </li>
         <li>
@@ -129,7 +121,110 @@
 
   <div class="btn-container">
     <button class="btn">Clear</button>
-    <!-- <button class="btn">Kirim</button> -->
-    <a href="mahasiswa/hasil" class="btn">Kirim</a>
+    <button class="w3-button" onclick="document.getElementById('id02').style.display='block'">Kirim</button>
+    <!-- <a href="mahasiswa/hasil" class="btn">Kirim</a> -->
+  </div>
+
+  <div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container"> 
+        <span onclick="document.getElementById('id02').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Modal Header</h2>
+      </header>
+      <div class="w3-container">
+        <div class="hasil-container">
+          <div class="wrapper">
+              <span class="circle"></span>
+              <span class="circle"></span>
+              <span class="circle"></span>
+              <h1 class="" id="resultText">Demam</h1>
+          </div>
+        </div>
+      </div>
+      <footer class="w3-container">
+        <p>Modal Footer</p>
+      </footer>
+    </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Menangkap elemen-elemen checkbox
+    const gejalaCheckboxes = document.querySelectorAll('.gejala');
+    const dampakCheckboxes = document.querySelectorAll('.dampak');
+
+    // Menangkap elemen hasil
+    const resultText = document.getElementById('resultText');
+
+    // Menambahkan event listener untuk checkbox
+    gejalaCheckboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', updateResult);
+    });
+
+    dampakCheckboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', updateResult);
+    });
+
+    // Fungsi untuk memperbarui teks hasil
+    function updateResult() {
+      const selectedGejala = getSelectedValues(gejalaCheckboxes);
+      const selectedDampak = getSelectedValues(dampakCheckboxes);
+
+      // Menyusun kalimat hasil
+      let result = selectedGejala.length > 0 && selectedDampak.length > 0 ?
+        selectedGejala.join(' dan ') + ' dan ' + selectedDampak.join(':\nKemungkinan penyakit: ' + getPossibleDiseases(selectedGejala, selectedDampak)) :
+        'Pilih setidaknya satu gejala dan satu dampak untuk mendapatkan hasil.';
+
+      // Menampilkan hasil pada elemen
+      resultText.textContent = result;
+    }
+
+    // Fungsi untuk mendapatkan nilai terpilih dari checkbox
+    function getSelectedValues(checkboxes) {
+      let selectedValues = [];
+      checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+          selectedValues.push(checkbox.value);
+        }
+      });
+      return selectedValues;
+    }
+
+    // Fungsi untuk mendapatkan kemungkinan penyakit berdasarkan gejala dan dampak yang dipilih
+    function getPossibleDiseases(gejala, dampak) {
+      // Objek berisi hubungan antara gejala, dampak, dan kemungkinan penyakit
+      let diseasesMap = {
+        'GERD': ['Nyeri dada seperti terbakar', 'Hilangnya nafsu makan'],
+        'Anemia': ['Mual', 'Tubuh lemas, mudah lelah, dan tidak bertenaga'],
+        'ISPA': ['Batuk', 'Suhu badan meningkat'],
+        'Hipertensi': ['Mimisan', 'Sulit tidur atau gangguan tidur'],
+        'Gastroenteritis': ['Bersendawa', 'Diare'],
+        'Gastroenteritis': ['Perut Kembung', 'Muntah'],
+        'GERD': ['Regurgitasi (naiknya asam ke tenggorokan)', 'Berat badan menurun drastis'],
+        'Anoreksia': ['Hilangnya nafsu makan', 'Tubuh lemas, mudah lelahlelah, dan tidak bertenaga'],
+        'Gastroenteritis': ['Muntah', 'Diare'],
+        'Demam': ['Suhu badan meningkat', 'Sulit tidur atau gangguan tidur'],
+        'GERD': ['Nyeri dada seperti terbakar', 'Muntah'],
+        'Anoreksia': ['Bersendawa', 'Hilangnya nafsu makan'],
+        'Anemia': ['Mimisan', 'Tubuh lemas, mudah lelah, dan tidak bertenaga'],
+        'Gastroenteritis': ['Diare', 'Suhu badan meningkat'],
+      };
+
+      // Mencari kemungkinan penyakit
+      let possibleDiseases = [];
+      gejala.forEach(function (symptom) {
+        dampak.forEach(function (impact) {
+          let key = symptom + '|' + impact;
+          possibleDiseases = possibleDiseases.concat(diseasesMap[key] || []);
+        });
+      });
+
+      // Menghilangkan kemungkinan penyakit yang duplikat
+      possibleDiseases = Array.from(new Set(possibleDiseases));
+
+      return possibleDiseases.join(', ');
+    }
+  });
+</script>
