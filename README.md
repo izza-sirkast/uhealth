@@ -9,13 +9,13 @@ Web ini dibuat untuk memenuhi persyaratan kelulusan mata kuliah Interaksi Manusi
 
 ## Cara Install
 
-Ikuti langkah-langkah berikut untuk menginstal proyek:
+Ikuti langkah-langkah berikut untuk menginstal project:
 
 1. Clone repositori ini:
     ```bash
     git clone https://github.com/izza-sirkast/uhealth.git
     ```
-2. Masuk ke direktori proyek:
+2. Masuk ke direktori project:
     ```bash
     cd uhealth
     ```
@@ -26,7 +26,7 @@ Ikuti langkah-langkah berikut untuk menginstal proyek:
 
 ## Cara Menjalankan
 
-Setelah instalasi selesai, Anda bisa menjalankan proyek dengan perintah berikut:
+Setelah instalasi selesai, jalankan project dengan perintah berikut:
 
 ```bash
 npm start
