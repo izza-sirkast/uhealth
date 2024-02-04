@@ -21,14 +21,6 @@ router.get('/izin-sakit', (req, res) => {
 
 router.get('/riwayat', async (req, res) => {
     try{
-        const mahasiswa = await mahasiswaModel.find().populate('dosen_wali')
-        const dosen = await dosenModel.find()
-        const dokter = await dokterModel.find()
-        const riwayat = await riwayatModel.find().populate('mahasiswa')
-        console.log(mahasiswa)
-        console.log(dosen)
-        console.log(dokter)
-        console.log(riwayat)
         res.render('mahasiswa/riwayat')
     }catch(err){
         console.log(err)

@@ -6,16 +6,35 @@
     </section>
   </div>
   <div class="right">
-    <form>
+    <form action="/auth/login" method="post">
       <section class="copy">
         <h2>Selamat Datang</h2>
+        <% if (messages.error) { %>
+          <p style="color: red;"><%= messages.error %></p>
+        <% } %>
         <div class="login-container">
-          <p>Masukkan NIM dan Password untuk Login</p>
+          <p>Login gagal, nomor induk atau password salah</p>
         </div>
       </section>
+      <div style="margin-bottom: 15px;">
+        <span>Login sebagai:</span>
+        <br>
+        <div style="display: inline-flex; align-items: flex-start; margin-right: 2px;">
+          <input type="radio" name="loginAs" value="mahasiswa" id="mahasiswa">
+          <label for="mahasiswa" style="margin-top: 1px">Mahasiswa</label>
+        </div>
+        <div style="display: inline-flex; align-items: flex-start; margin-right: 2px;">
+          <input type="radio" name="loginAs" value="dosen" id="dosen">
+          <label for="dosen" style="margin-top: 1px">Dosen</label>
+        </div>
+        <div style="display: inline-flex; align-items: flex-start; margin-right: 2px;">
+          <input type="radio" name="loginAs" value="dokter" id="dokter">
+          <label for="dokter" style="margin-top: 1px">Dokter</label>
+        </div>
+      </div>
       <div class="input-container nim">
         <label for="nim">NIM</label>
-        <input type="text" id="nim" name="nim" />
+        <input type="text" id="nim" name="ni" />
       </div>
       <div class="input-container password">
         <label for="password">Password</label>

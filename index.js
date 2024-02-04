@@ -59,14 +59,15 @@ const authenticationRoute = require('./routes/authentication')
 const dosenRoute = require('./routes/dosen')
 const dokterRoute = require('./routes/dokter')
 
-app.get('/', checkIsMahasiswa, (req, res) => {
-    res.redirect('/mahasiswa')
-})
 app.use('/auth', authenticationRoute)
 app.use('/mahasiswa', chooseLayout('mahasiswa'), checkIsMahasiswa , mahasiswaRoute)
 app.use('/dosen', chooseLayout('dosen'), checkIsDosen , dosenRoute)
 app.use('/dokter', chooseLayout('dokter'), checkIsDokter , dokterRoute)
 
+app.get('/', (req, res) => {
+    console.log('tes')
+    res.redirect('/mahasiswa')
+})
 
 // Middleware to choose the layout based on the route / user
 function chooseLayout(route){

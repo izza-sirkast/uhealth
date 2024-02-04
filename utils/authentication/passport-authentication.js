@@ -16,13 +16,13 @@ function passportSetup(passport){
             }else if(loginAs == 'dokter'){
                 user = await dokterModel.findOne({nidok : ni})
             }
-
+            
             if (user == null) {
-                return done(null, false, {message : 'Email or password incorrect'})
+                return done(null, false, {message : 'Nomor induk atau password salah'})
             }else if(user.password === password){
                 return done(null, {user, loginAs})
             }else{
-                return done(null, false, {message : 'Email or password incorrect'})
+                return done(null, false, {message : 'nomor induk or password salah'})
             }
         }catch(err){
             console.log(err)
@@ -39,13 +39,15 @@ function passportSetup(passport){
     
     passport.deserializeUser(async function(data, done) {
         let user;
-        // If login as mahasiswa
         if (data.loginAs == 'mahasiswa') {
             user = await mahasiswaModel.findById(data.id) 
+            user.loginAs = 'mahasiswa'
         }else if(data.loginAs == 'dosen'){
             user = await dosenModel.findById(data.id)
+            user.loginAs = 'dosen'
         }else if(data.loginAs == 'dokter'){
             user = await dokterModel.findById(data.id)
+            user.loginAs = 'dokter'
         }
         process.nextTick(function() {
             return done(null, user)
@@ -59,14 +61,14 @@ function checkAuthenticated(req,res,next){
     if(req.isAuthenticated()){
         return next()
     }else{
-        console.log('User is not authenticated')
+        console.log('User belum terautentikasi')
         return res.redirect('/auth/login')
     }
 }
 
 function checkNotAuthenticated(req,res,next){
     if(req.isAuthenticated()){
-        console.log('User is allready authenticated')
+        console.log('User sudah terautentikasi')
         return res.redirect('/mahasiswa')
     }
     return next()
@@ -77,7 +79,7 @@ function checkIsMahasiswa(req,res,next){
     if(req.isAuthenticated() && req.user.loginAs == 'mahasiswa'){
         return next()
     }else if(!req.isAuthenticated()){
-        console.log('User is not authenticated')
+        console.log('User belum terautentikasi')
         res.redirect('/auth/login')
     }else{
         if(req.user.loginAs == 'dosen'){
@@ -93,7 +95,7 @@ function checkIsDosen(req,res,next){
     if(req.isAuthenticated() && req.user.loginAs == 'dosen'){
         return next()
     }else if(!req.isAuthenticated()){
-        console.log('User is not authenticated')
+        console.log('User belum terautentikasi')
         res.redirect('/auth/login')
     }else{
         if(req.user.loginAs == 'mahasiswa'){
@@ -109,7 +111,7 @@ function checkIsDokter(req,res,next){
     if(req.isAuthenticated() && req.user.loginAs == 'dokter'){
         return next()
     }else if(!req.isAuthenticated()){
-        console.log('User is not authenticated')
+        console.log('User belum terautentikasid')
         res.redirect('/auth/login')
     }else{
         if(req.user.loginAs == 'mahasiswa'){
