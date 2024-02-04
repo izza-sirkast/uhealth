@@ -2,15 +2,17 @@
 const express = require('express')
 const ejsLayout = require('express-ejs-layouts')
 const mongoose = require('mongoose')
+const passport = require('passport')
+const LocalStrategy = require('passport-local')
+const session = require('express-session')
+const flash = require('express-flash')
+const MongoStore = require('connect-mongo')
 
 // Node js lib
 const path = require('path')
 
-// Routes
-const mahasiswaRoute = require('./routes/mahasiswa')
-const authenticationRoute = require('./routes/authentication')
-const dosenRoute = require('./routes/dosen')
-const dokterRoute = require('./routes/dokter')
+// Local lib
+const {passportSetup, checkAuthenticated, checkIsMahasiswa, checkIsDosen, checkIsDokter} = require('./utils/authentication/passport-authentication')
 
 const app = express()
 
@@ -34,16 +36,36 @@ app.use(ejsLayout)
 app.use(express.static(path.join(__dirname, '/public')))
 app.use(express.json({limit : '50mb'}))
 app.use(express.urlencoded({limit : '50mb', extended : true}))
+app.use(session({
+    secret: 'theonepieceisreal10',
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({
+        mongoUrl: 'mongodb+srv://izza:2ReVT0ZGpn5cdcZk@uhealth.uujgnqs.mongodb.net/uhealth?retryWrites=true&w=majority',
+        dbName: 'uhealth'
+    })
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(passport.authenticate('session'))
+app.use(flash())
 
-app.get('/', (req, res) => {
-    //redirect sementara
+//Initialize passport for authentication
+passportSetup(passport)
+
+// Routes
+const mahasiswaRoute = require('./routes/mahasiswa')
+const authenticationRoute = require('./routes/authentication')
+const dosenRoute = require('./routes/dosen')
+const dokterRoute = require('./routes/dokter')
+
+app.get('/', checkIsMahasiswa, (req, res) => {
     res.redirect('/mahasiswa')
 })
-
 app.use('/auth', authenticationRoute)
-app.use('/mahasiswa', chooseLayout('mahasiswa') , mahasiswaRoute)
-app.use('/dosen', chooseLayout('dosen') , dosenRoute)
-app.use('/dokter', chooseLayout('dokter') , dokterRoute)
+app.use('/mahasiswa', chooseLayout('mahasiswa'), checkIsMahasiswa , mahasiswaRoute)
+app.use('/dosen', chooseLayout('dosen'), checkIsDosen , dosenRoute)
+app.use('/dokter', chooseLayout('dokter'), checkIsDokter , dokterRoute)
 
 
 // Middleware to choose the layout based on the route / user
