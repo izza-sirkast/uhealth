@@ -1,1 +1,107 @@
-<h1>Cek surat izin mahasiswa</h1>
+<div class="w3-cell-row" style="margin-top: 2rem;">
+    <div class="w3-container w3-cell" style="width: 50%;">
+        <div class="w3-container">
+            <p class="tanggal">20/01/2024</p>
+            <h2>Notification</h2>
+        </div>
+        <div class="w3-container" style="overflow: auto; max-height: 300px;">
+            <h3>Hari Ini</h3>
+            <div class="w3-card w3-round-xlarge w3-section" onclick="openModal()" style="cursor: pointer;">
+                <div class="w3-container">
+                    <p>Fulan mengirimkan surat sakit</p>
+                    <p>2 jam yang lalu</p>
+                </div>
+            </div>
+            <div class="w3-card w3-round-xlarge w3-section" onclick="openModal()" style="cursor: pointer;">
+                <div class="w3-container">
+                    <p>Fulan mengirimkan surat sakit</p>
+                    <p>2 jam yang lalu</p>
+                </div>
+            </div>
+            <div class="w3-card w3-round-xlarge w3-section" onclick="openModal()" style="cursor: pointer;">
+                <div class="w3-container">
+                    <p>Fulan mengirimkan surat sakit</p>
+                    <p>2 jam yang lalu</p>
+                </div>
+            </div>
+            <div class="w3-card w3-round-xlarge w3-section" onclick="openModal()" style="cursor: pointer;">
+                <div class="w3-container">
+                    <p>Fulan mengirimkan surat sakit</p>
+                    <p>2 jam yang lalu</p>
+                </div>
+            </div>
+            <div class="w3-card w3-round-xlarge w3-section" onclick="openModal()" style="cursor: pointer;">
+                <div class="w3-container">
+                    <p>Fulan mengirimkan surat sakit</p>
+                    <p>2 jam yang lalu</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="id02" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-round-xlarge" style="width: 600px;">
+            <header class="w3-container">
+                <span onclick="closeModal()" class="w3-button w3-display-topright">&times;</span>
+                <h1 class="w3-margin">Surat Keterangan Sakit</h1>
+            </header>
+            <div class="w3-container">
+                <table class="w3-table w3-margin-bottom">
+                    <tr>
+                        <td>NIM</td>
+                        <td>:</td>
+                        <td>10122005</td>
+                    </tr>
+                    <tr>
+                        <td>Nama</td>
+                        <td>:</td>
+                        <td>Zulfi</td>
+                    </tr>
+                    <tr>
+                        <td>Kelas</td>
+                        <td>:</td>
+                        <td>IF-1</td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal</td>
+                        <td>:</td>
+                        <td>20/01/2024</td>
+                    </tr>
+                    <tr>
+                        <td>Mata Kuliah</td>
+                        <td>:</td>
+                        <td>IMK</td>
+                    </tr>
+                    <tr>
+                        <td>Dosen</td>
+                        <td>:</td>
+                        <td>Utami Dewi</td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Penyakit</td>
+                        <td>:</td>
+                        <td>Diare</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showDetail() {
+        const detail = document.getElementById('detail');
+        if (detail.style.display === 'none') {
+            detail.style.display = 'block';
+        } else {
+            detail.style.display = 'none';
+        }
+    }
+    function openModal(){
+        document.getElementById('id02').style.display='block';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+        document.getElementById('id02').style.display='none';
+        document.body.style.overflow = 'auto';
+    }
+</script>
