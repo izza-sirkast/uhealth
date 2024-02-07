@@ -19,7 +19,7 @@
             </div>
             <div class="header-profile">
                 <img src="assets/profile.png" alt="profile picture" style="width: 50px; height: 50px; margin-right: 10px;">
-                <p>Mahasiswa</p>
+                <p><%= user.nama %></p>
             </div>
         </div>
     </header>
@@ -32,20 +32,20 @@
             <div class="profile-user">
                 <img src="assets/profile.png" alt="profile picture" style="width: 110px; margin: 20px 0 0 20px;">
                 <ul>
-                    <li>Zulfi Fadilah Azhar</li>
+                    <li><%= user.nama %></li>
                     <li>Mahasiswa</li>
                 </ul>
             </div>
             <div class="profile-info">
                 <ul>
                     <li>Program Studi</li>
-                    <li>01 - Sastra Teknik</li>
+                    <li><%= user.program_studi %></li>
                     <li>Kelas / Tahun Masuk</li>
-                    <li>ST-1 / 2022</li>
+                    <li><%= user.kelas %> / <%= user.tahun_masuk.toISOString().slice(0,4) %></li>
                     <li>Dosen Wali</li>
-                    <li>Maman Racing, S.T, M.Kom</li>
+                    <li><%= user.dosen_wali.nama %>, S.T, M.Kom</li>
                     <li>Email</li>
-                    <li>zulfi.10122005@mahasiswa.unikom.ac.id</li>
+                    <li><%= user.email %></li>
                 </ul>
             </div>
             <div class="button-logout">

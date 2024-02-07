@@ -17,7 +17,7 @@
             </div>
             <div class="header-profile">
                 <img src="assets/profile.png" alt="profile picture" style="width: 50px; height: 50px; margin-right: 10px;">
-                <p>Dosen</p>
+                <p><%= user.nama %></p>
             </div>
         </div>
     </header>
@@ -30,20 +30,22 @@
             <div class="profile-user">
                 <img src="assets/profile.png" alt="profile picture" style="width: 110px; margin: 20px 0 0 20px;">
                 <ul>
-                    <li>Usman bin Abdul Jalil Sisha</li>
+                    <li><%= user.nama %></li>
                     <li>Dosen</li>
                 </ul>
             </div>
             <div class="profile-info">
                 <ul>
                     <li>Nomor Induk Dosen</li>
-                    <li>201321908401</li>
+                    <li><%= user.nid %></li>
                     <li>Tahun Masuk</li>
-                    <li>2009</li>
+                    <li><%= user.tahun_masuk.toISOString().slice(0,4) %></li>
                     <li>Kelas Diampu</li>
-                    <li>S1/III/IF-1, S1/IV/IF-7</li>
+                    <li><% user.kelas.forEach(kelas => { %>
+                        <span><%= kelas %>, </span>
+                    <% }) %></li>
                     <li>Email</li>
-                    <li>usmaniabdul771@dosen.unikom.ac.id</li>
+                    <li><%= user.email %></li>
                 </ul>
             </div>
             <div class="button-logout">

@@ -73,6 +73,7 @@ app.get('/', (req, res) => {
 function chooseLayout(route){
     return (req, res, next) => {
         res.locals.layout = `layouts/${route}-layout`
+        res.locals.user = req.user
         next()
     }
 }

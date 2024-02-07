@@ -8,5 +8,22 @@
 </head>
 <body>
     <%- body %>
+
+    <script>
+        const loginAs = document.querySelectorAll('input[name="loginAs"]')
+        
+        loginAs.forEach(input => {
+            input.addEventListener('change', () => {
+                const loginasLabel = document.getElementById('loginas-label')
+                let loginasVal;
+                switch(input.value){
+                    case 'mahasiswa': loginasVal = 'NIM'; break;
+                    case 'dosen' : loginasVal = 'NID'; break;
+                    case 'dokter' : loginasVal = 'NIDok'; break;
+                }
+                loginasLabel.innerHTML = loginasVal
+            })
+        })
+    </script>
 </body>
 </html>
