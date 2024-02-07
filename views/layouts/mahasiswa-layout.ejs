@@ -49,7 +49,9 @@
                 </ul>
             </div>
             <div class="button-logout">
-                <button class="w3-button w3-red w3-round-xlarge">Logout</button>
+                <form action="/auth/logout" method="post">
+                    <button type="submit" class="w3-button w3-red w3-round-xlarge">Logout</button>
+                </form>
             </div>
         </div>
         <div class="main-card w3-round-xxlarge">
