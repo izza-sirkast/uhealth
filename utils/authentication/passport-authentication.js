@@ -40,7 +40,7 @@ function passportSetup(passport){
     passport.deserializeUser(async function(data, done) {
         let user;
         if (data.loginAs == 'mahasiswa') {
-            user = await mahasiswaModel.findById(data.id) 
+            user = await mahasiswaModel.findById(data.id).populate('dosen_wali')
             user.loginAs = 'mahasiswa'
         }else if(data.loginAs == 'dosen'){
             user = await dosenModel.findById(data.id)
