@@ -2,167 +2,31 @@
   <div class="container">
     <h2>RIWAYAT PEMERIKSAAN</h2>
     <div class="row">
-      <div class="col-4">
-        <div class="card">
-          <div class="card-header">
-            <span>
-              <p>05/01/2024</p>
-            </span>
-            <span>
-              <p>Klinik Medical Center</p>
-            </span>
-          </div>
-          <div class="card-body">
-            <div class="content-left">
-              <ul>
-                <li><p>Diabetes</p></li>
-                <li><p>Penyakit</p></li>
-              </ul>
+      <% riwayat_pemeriksaan.forEach(riwayat => { %>
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <span>
+                <p><%= `${riwayat.tanggal.getDate()}/${riwayat.tanggal.getMonth()}/${riwayat.tanggal.getYear()}` %></p>
+              </span>
+              <span>
+                <p><%= riwayat.klinik %></p>
+              </span>
             </div>
-            <div class="content-right">
-              <p>icon</p>
+            <div class="card-body">
+              <div class="content-left">
+                <p style="margin: 20px 0px 20px 10px;"><%= riwayat.penyakit %></p>
+              </div>
+              <div class="content-right" style="margin-top: 5px;">
+                <p>icon</p>
+              </div>
             </div>
-          </div>
-          <div class="card-footer">
-            <span>Pemeriksa: Dr. Fulan</span>
+            <div class="card-footer">
+              <span>Pemeriksa: <%= riwayat.pemeriksa %></span>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <div class="card-header">
-            <span>
-              <p>05/01/2024</p>
-            </span>
-            <span>
-              <p>Klinik Medical Center</p>
-            </span>
-          </div>
-          <div class="card-body">
-            <div class="content-left">
-              <ul>
-                <li><p>Diabetes</p></li>
-                <li><p>Penyakit</p></li>
-              </ul>
-            </div>
-            <div class="content-right">
-              <p>icon</p>
-            </div>
-          </div>
-          <div class="card-footer">
-            <span>Pemeriksa: Dr. Fulan</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <div class="card-header">
-            <span>
-              <p>05/01/2024</p>
-            </span>
-            <span>
-              <p>Klinik Medical Center</p>
-            </span>
-          </div>
-          <div class="card-body">
-            <div class="content-left">
-              <ul>
-                <li><p>Diabetes</p></li>
-                <li><p>Penyakit</p></li>
-              </ul>
-            </div>
-            <div class="content-right">
-              <p>icon</p>
-            </div>
-          </div>
-          <div class="card-footer">
-            <span>Pemeriksa: Dr. Fulan</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <div class="card-header">
-            <span>
-              <p>05/01/2024</p>
-            </span>
-            <span>
-              <p>Klinik Medical Center</p>
-            </span>
-          </div>
-          <div class="card-body">
-            <div class="content-left">
-              <ul>
-                <li><p>Diabetes</p></li>
-                <li><p>Penyakit</p></li>
-              </ul>
-            </div>
-            <div class="content-right">
-              <p>icon</p>
-            </div>
-          </div>
-          <div class="card-footer">
-            <span>Pemeriksa: Dr. Fulan</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <div class="card-header">
-            <span>
-              <p>05/01/2024</p>
-            </span>
-            <span>
-              <p>Klinik Medical Center</p>
-            </span>
-          </div>
-          <div class="card-body">
-            <div class="content-left">
-              <ul>
-                <li><p>Diabetes</p></li>
-                <li><p>Penyakit</p></li>
-              </ul>
-            </div>
-            <div class="content-right">
-              <p>icon</p>
-            </div>
-          </div>
-          <div class="card-footer">
-            <span>Pemeriksa: Dr. Fulan</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <div class="card-header">
-            <span>
-              <p>05/01/2024</p>
-            </span>
-            <span>
-              <p>Klinik Medical Center</p>
-            </span>
-          </div>
-          <div class="card-body">
-            <div class="content-left">
-              <ul>
-                <li><p>Diabetes</p></li>
-                <li><p>Penyakit</p></li>
-              </ul>
-            </div>
-            <div class="content-right">
-              <p>icon</p>
-            </div>
-          </div>
-          <div class="card-footer">
-            <span>Pemeriksa: Dr. Fulan</span>
-          </div>
-        </div>
-      </div>
+      <% }) %>
     </div>
   </div>
 </section>

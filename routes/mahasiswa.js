@@ -21,7 +21,8 @@ router.get('/izin-sakit', (req, res) => {
 
 router.get('/riwayat', async (req, res) => {
     try{
-        res.render('mahasiswa/riwayat')
+        const riwayat_pemeriksaan = await riwayatModel.find({mahasiswa: req.user.id}).sort({tanggal: -1})
+        res.render('mahasiswa/riwayat', {riwayat_pemeriksaan})
     }catch(err){
         console.log(err)
         res.redirect('/mahasiswa')
