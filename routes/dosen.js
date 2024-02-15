@@ -18,4 +18,8 @@ router.get('/kesehatan-mahasiswa', (req, res) => {
     res.render('dosen/kesehatan-mahasiswa')
 })
 
+router.get('/hasil', async (req, res) => {
+    res.render('mahasiswa/hasil-fs')
+})
+
 module.exports = router;
