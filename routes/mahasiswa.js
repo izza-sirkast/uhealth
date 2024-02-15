@@ -50,7 +50,6 @@ router.get('/riwayat', async (req, res) => {
 
 router.get('/hasil', async (req, res) => {
     res.render('mahasiswa/hasil-fs')
-
 })
 
 module.exports = router;

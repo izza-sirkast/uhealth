@@ -24,20 +24,25 @@ let weather = {
         document.querySelector(".wind").innerText =
             "Kecepatan Angin: " + speed + " km/jam";
         document.querySelector(".weather").classList.remove("loading");
-        
 
         if (temp < 0) {
-        document.querySelector("#temp_recomendation").innerText = "Suhu sangat dingin. Pastikan untuk mengenakan pakaian hangat, minum minuman hangat, dan tetap di dalam ruangan jika memungkinkan.";
+        document.querySelector("#temp_recomendation").innerText = "Suhu sangat dingin.";
+        document.querySelector("#temp_recomendation2").innerText = "Pastikan untuk mengenakan pakaian hangat, minum minuman hangat, dan tetap di dalam ruangan jika memungkinkan.";
     } else if (temp >= 0 && temp <= 10) {
-        document.querySelector("#temp_recomendation").innerText = "Suhu cukup dingin. Kenakan pakaian yang cukup hangat dan jaga tubuh Anda tetap hangat.";
+        document.querySelector("#temp_recomendation").innerText = "Suhu cukup dingin.";
+        document.querySelector("#temp_recomendation2").innerText = "Kenakan pakaian yang cukup hangat dan jaga tubuh Anda tetap hangat.";
     } else if (temp > 10 && temp <= 20) {
-        document.querySelector("#temp_recomendation").innerText = "Suhu cukup sejuk. Kenakan pakaian yang nyaman dan pastikan untuk tetap terhidrasi.";
+        document.querySelector("#temp_recomendation").innerText = "Suhu cukup sejuk.";
+        document.querySelector("#temp_recomendation2").innerText = "Kenakan pakaian yang nyaman dan pastikan untuk tetap terhidrasi.";
     } else if (temp > 20 && temp <= 26) {
-        document.querySelector("#temp_recomendation").innerText = "Suhu cukup hangat. Pastikan untuk memakai pakaian yang nyaman dan minum banyak air.";
+        document.querySelector("#temp_recomendation").innerText = "Suhu cukup hangat.";
+        document.querySelector("#temp_recomendation2").innerText = "Pastikan untuk memakai pakaian yang nyaman dan minum banyak air.";
     } else if (temp > 26 && temp <= 30) {
-        document.querySelector("#temp_recomendation").innerText = "Suhu cukup tinggi. Hindari aktivitas di luar ruangan pada siang hari, gunakan tabir surya, dan perbanyak minum.";
+        document.querySelector("#temp_recomendation").innerText = "Suhu cukup tinggi.";
+        document.querySelector("#temp_recomendation2").innerText = "Hindari aktivitas di luar ruangan pada siang hari, gunakan tabir surya, dan perbanyak minum.";
     } else if (temp > 30) {
-        document.querySelector("#temp_recomendation").innerText = "Suhu sangat tinggi. Hindari paparan sinar matahari langsung, minum banyak air, dan tetap di dalam ruangan dengan AC jika memungkinkan.";
+        document.querySelector("#temp_recomendation").innerText = "Suhu sangat tinggi.";
+        document.querySelector("#temp_recomendation2").innerText = "Hindari paparan sinar matahari langsung, minum banyak air, dan tetap di dalam ruangan dengan AC jika memungkinkan.";
     }
     
     },
