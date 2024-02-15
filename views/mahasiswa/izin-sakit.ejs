@@ -1,69 +1,72 @@
-<section id="izinsakit">
-  <div class="header">
-    <h2>SURAT KETERANGAN SAKIT</h2>
-  </div>
+<section id="izinsakit" class="w3-container">
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-col l6">
+      <div class="w3-container w3-center">
+        <h3>Data Mahasiswa</h3>
+      </div>
+      <div class="w3-row-padding">
+        <div class="w3-col l12 w3-margin-top">
+          <label>NIM</label>
+          <input class="w3-input w3-border w3-round-xlarge" type="text" name="nim" />
+        </div>
+        <div class="w3-col l12 w3-margin-top">
+          <label>NAMA</label>
+          <input class="w3-input w3-border w3-round-xlarge" type="text" name="nama" />
+        </div>
+        <div class="w3-col l12 w3-margin-top">
+          <label>KELAS</label>
+          <input class="w3-input w3-border w3-round-xlarge" type="text" name="kelas" />
+        </div>
+        <div class="w3-col l12 w3-margin-top">
+          <label>SURAT SAKIT</label>
+          <input class="w3-input w3-border w3-round-xlarge" type="file" />
+        </div>
+      </div>
+    </div>
 
-  <div class="row data-mhs">
-    <div class="tittle">
-      <h3>Data Mahasiswa</h3>
-    </div>
-    <div class="col-4">
-      <label>NIM</label>
-      <input type="text" name="nim" size="15px" />
-    </div>
-    <div class="col-4">
-      <label>NAMA</label>
-      <input type="text" name="nama" size="15px" />
-    </div>
-    <div class="col-4">
-      <label>KELAS</label>
-      <input type="text" name="kelas" size="15px" />
-    </div>
-  </div>
-
-  <div class="row info-akademis">
-    <div class="tittle">
-      <h3>Informasi Akademis & Diagnosis</h3>
-    </div>
-    <div class="col-3">
-      <label>TANGGAL</label>
-      <input type="date" name="tanggal" />
-    </div>
-    <div class="col-3">
-      <label>MATAKULIAH TUJUAN</label>
-      <select name="matkul">
-        <option value="Jarkom">Jaringan Komputer</option>
+    <div class="w3-col l6">
+      <div class="w3-container w3-center">
+        <h3>Informasi Akademis & Diagnosis</h3>
+      </div>
+      <div class="w3-row-padding">
+        <div class="w3-col l12 w3-margin-top">
+          <label>TANGGAL</label>
+          <input class="w3-input w3-border w3-round-xlarge" type="date" name="tanggal" />
+        </div>
+        <div class="w3-col l12 w3-margin-top">
+          <label>MATAKULIAH TUJUAN</label>
+          <select class="w3-select w3-border w3-round-xlarge" name="matkul">
+            <option value="Jarkom">Jaringan Komputer</option>
         <option value="Imk">Interaksi Manusia dan Komputer</option>
         <option value="Analgo">Analisis dan Strategi Algoritma</option>
         <option value="ADBD">Analisis dan Desain Basis Data</option>
         <option value="SO">Sistem Operasi</option>
         <option value="Psd">Pengantar Sains Data</option>
         <option value="Pdsd">Pemrograman Dasar Sains Data</option>
-      </select>
-    </div>
-    <div class="col-3">
-      <label>DOSEN PENGAMPU</label>
-      <select name="dosen">
-        <option value="Eko">Eko Budi Setiawan S.Kom., M.T</option>
+          </select>
+        </div>
+        <div class="w3-col l12 w3-margin-top">
+          <label>DOSEN PENGAMPU</label>
+          <select class="w3-select w3-border w3-round-xlarge" name="dosen">
+            <option value="Eko">Eko Budi Setiawan S.Kom., M.T</option>
         <option value="Utami">Utami Dewi Widianti M.Kom</option>
         <option value="Chrismikha">Chrismikha Hardyanto S.Kom., M.Kom.</option>
         <option value="Gentisya">Gentisya Tri Mardiani S.Kom., M.Kom</option>
         <option value="Hanhan">Hanhan Maulana M.Kom., Ph.D</option>
         <option value="Riani">Riani Lubis S.T, M.T</option>
         <option value="Fakhrian">Fakhrian Fadlia Adiwijaya M.Kom</option>
-      </select>
-    </div>
-    <div class="col-3">
-      <label>JENIS PENYAKIT</label>
-      <input type="text" size="15px" />
-    </div>
-    <div class="col-3">
-      <label>SURAT SAKIT</label>
-      <input type="file" size="15px" />
+          </select>
+        </div>
+        <div class="w3-col l12 w3-margin-top">
+          <label>JENIS PENYAKIT</label>
+          <input class="w3-input w3-border w3-round-xlarge" type="text" />
+        </div>
+      </div>
     </div>
   </div>
-  <div class="button-container">
-    <button>Clear</button>
-    <button>Kirim</button>
+
+  <div class="w3-container w3-center w3-margin-top">
+    <button class="w3-button w3-light-grey w3-margin w3-round-xlarge">Clear</button>
+    <button class="w3-button w3-blue w3-margin w3-round-xlarge">Kirim</button>
   </div>
 </section>
