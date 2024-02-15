@@ -1,60 +1,109 @@
-#feeling-sick .header {
+@media screen and (min-width: 1279px) {
+  #feeling-sick .header {
+    margin: 2rem 0 0 1.5rem;
+    line-height: 25px;
+  }
+  
+  #feeling-sick h2,
+  #feeling-sick h6 {
+    margin-left: 20px;
+  }
+  
+  #feeling-sick .checkbox-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #feeling-sick .column-right,
+  #feeling-sick .column-left {
+    flex: 1;
+  }
+  
+  #feeling-sick .column-left {
+    margin-right: 60px;
+  }
+  
+  #feeling-sick .gejala,
+  #feeling-sick .dampak {
+    margin-left: 20px;
+  }
+  
+  #feeling-sick label {
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  
+  #feeling-sick h3 {
+    text-align: center;
+  }
+  
+  #feeling-sick .btn-container {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+  }
+  
+  #feeling-sick ul li {
+    list-style: none;
+    padding-top: 2px;
+  }
+  
+}
+
+@media screen and (min-width: 1440px) {
+  #feeling-sick .header {
   margin: 2rem 0 0 1.5rem;
   line-height: 25px;
+  }
+  
+  #feeling-sick h2,
+  #feeling-sick h6 {
+    margin-left: 20px;
+  }
+  
+  #feeling-sick .checkbox-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #feeling-sick .column-right,
+  #feeling-sick .column-left {
+    flex: 1;
+  }
+  
+  #feeling-sick .column-left {
+    margin-right: 90px;
+  }
+  
+  #feeling-sick .gejala,
+  #feeling-sick .dampak {
+    margin-left: 40px;
+  }
+  
+  #feeling-sick label {
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  
+  #feeling-sick h3 {
+    text-align: center;
+  }
+  
+  #feeling-sick .btn-container {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+  }
+  
+  #feeling-sick ul li {
+    list-style: none;
+    padding-top: 2px;
+  }
 }
 
-#feeling-sick h2,
-#feeling-sick h6 {
-  margin-left: 20px;
+.btn-container .w3-red {
+  margin-right: 1rem;
 }
-
-#feeling-sick .checkbox-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-#feeling-sick .column-right,
-#feeling-sick .column-left {
-  flex: 1;
-}
-
-#feeling-sick .column-left {
-  margin-right: 90px;
-}
-
-#feeling-sick .gejala,
-#feeling-sick .dampak {
-  margin-left: 40px;
-}
-
-#feeling-sick label {
-  margin-left: 10px;
-  font-size: 13px;
-}
-
-#feeling-sick h3 {
-  text-align: center;
-}
-
-#feeling-sick .btn-container {
-  width: 90%;
-  display: flex;
-  justify-content: end;
-}
-
-#feeling-sick ul li {
-  list-style: none;
-  padding-top: 2px;
-}
-
-#feeling-sick .btn {
-  margin-left: 3.5rem;
-  border-radius: 25px;
-  background-color: #d9d9d9;
-  border: 1px solid black;
-  width: 70px;
-}
-
 
 .hasil-container {
   display: grid;
