@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
+
 // Third party lib
 const express = require('express')
 const ejsLayout = require('express-ejs-layouts')
@@ -23,7 +27,7 @@ app.set('views', path.join(__dirname, '/views'))
 // Database setup
 // ====================================================================
 // Connect to atlas
-mongoose.connect("mongodb+srv://izza:2ReVT0ZGpn5cdcZk@uhealth.uujgnqs.mongodb.net/uhealth?retryWrites=true&w=majority")
+mongoose.connect(process.env.DATABASE_URL)
 
 // Connect to mongodb local
 // mongoose.connect("mongodb://localhost:27017/uhealth")
@@ -41,7 +45,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://izza:2ReVT0ZGpn5cdcZk@uhealth.uujgnqs.mongodb.net/uhealth?retryWrites=true&w=majority',
+        mongoUrl: process.env.DATABASE_URL,
         dbName: 'uhealth'
     })
 }))
@@ -78,6 +82,6 @@ function chooseLayout(route){
     }
 }
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
     console.log('Server running on http://localhost:8000')
 })
