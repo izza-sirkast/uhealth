@@ -43,9 +43,20 @@ let weather = {
     } else if (temp > 30) {
         document.querySelector("#temp_recomendation").innerText = "Suhu sangat tinggi.";
         document.querySelector("#temp_recomendation2").innerText = "Hindari paparan sinar matahari langsung, minum banyak air, dan tetap di dalam ruangan dengan AC jika memungkinkan.";
-    }
+    };
+
+    if (humidity>=0 && humidity<=40) {
+        document.querySelector("#humid_recomendation").innerText = "Kelembapan rendah.";
+        document.querySelector("#humid_recomendation2").innerText = "Gunakan pelembap kulit, dan hindari aktivitas di luar ruangan pada siang hari.";
     
-    },
+    } else if (humidity>40 && humidity<=70) {
+        document.querySelector("#humid_recomendation").innerText = "Kelembapan cukup.";
+        document.querySelector("#humid_recomendation2").innerText = "Tetaplah menjaga keseimbangan kelembaban dengan melakukan ventilasi ruangan secara teratur";
+    } else if (humidity>70 && humidity <= 100) {
+        document.querySelector("#humid_recomendation").innerText = "Kelembapan tinggi.";
+        document.querySelector("#humid_recomendation2").innerText = "Pastikan untuk menjaga sirkulasi udara di dalam ruangan.";
+    };
+},
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);
     }
