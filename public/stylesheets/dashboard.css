@@ -178,7 +178,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.card {
+.card_dashboard {
   border-radius: 20px;
   width: 12rem;
   height: 7.5rem;
