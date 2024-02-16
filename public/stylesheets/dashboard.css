@@ -355,11 +355,14 @@ body {
     display: flex;
     justify-content: space-between;
   }
-  .card {
-    /* border: solid 1px #000; */
+  .card_dashboard {
     border-radius: 20px;
-    width: 14rem;
+    width: 12rem;
     height: 7.5rem;
+    background: linear-gradient(to right, #ccddf1, white );
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .weather-container {
