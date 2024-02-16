@@ -19,7 +19,7 @@ router.get('/kesehatan-mahasiswa', (req, res) => {
 })
 
 router.get('/hasil', async (req, res) => {
-    res.render('mahasiswa/hasil-fs')
+    res.render('dosen/hasil-fs')
 })
 
 module.exports = router;
